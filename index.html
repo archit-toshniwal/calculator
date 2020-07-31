@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="stylecp.css">
+</head>
+
+<body>
+
+    <div class="outer">
+        <div class="in">
+            <input type="text" name="text" id="input_data">
+        </div>
+        <div class="out">
+            <button id="nine" value="9" onclick="insert(9)">9</button>
+            <button id="eight" value="8" onclick="insert(8)">8</button>
+            <button id="seven" value="7" onclick="insert(7)">7</button>
+            <button id="plus" value="+" onclick="insert('+')">+</button>
+
+
+            <button id="six" value="6" onclick="insert(6)">6</button>
+            <button id="five" value="5" onclick="insert(5)">5</button>
+            <button id="four" value="4" onclick="insert(4)">4</button>
+            <button id="minus" value="-" onclick="insert('-')">-</button>
+
+
+            <button id="three" value="3" onclick="insert(3)">3</button>
+            <button id="second" value="2" onclick="insert(2)">2</button>
+            <button id="one" value="1" onclick="insert(1)">1</button>
+            <button id="mul" value="*" onclick="insert('*')">*</button>
+
+
+            <button id="squa_val" value="squa_value" onclick="archit()">x<sup>2</sup></button>
+            <button id=" zero " value="0 " onclick="insert(0)">0</button>
+            <button id="point " value=". " onclick="insert('.')">.</button>
+            <button id="division " value="/ " onclick="insert('/')">/</button>
+
+
+            <button id="clear " value="CE " onclick="cleardata() ">CE</button>
+            <button id="root " value="root " onclick="rooot()">√</button>
+            <button id="eql" value="equalto " onclick="resultend()">=</button>
+        </div>
+        <span>˟</span>
+    </div>
+
+</body>
+
+<script type="text/javascript ">
+    function insert(data) {
+        var temp = document.getElementById('input_data').value;
+        temp += data
+        document.getElementById('input_data').value = temp;
+
+    }
+
+    function cleardata() {
+
+        document.getElementById('input_data').value = " ";
+
+    }
+
+    function archit() {
+        var data = parseInt(document.getElementById('input_data').value);
+        document.getElementById('input_data').value = Math.pow(data, 2);
+    }
+
+    function rooot() {
+        document.getElementById('input_data').value = Math.sqrt(parseInt(document.getElementById('input_data').value));
+    }
+
+    function resultend() {
+        document.getElementById('input_data').value = eval(document.getElementById('input_data').value);
+    }
+</script>
+
+</html>
